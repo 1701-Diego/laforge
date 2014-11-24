@@ -40,7 +40,7 @@ func DockerAwayTeam(client receptor.Client, domain string, routeRoot string) err
 	fmt.Printf("To make contact:\n  http://%s/\n", route)
 	fmt.Printf("To stream logs:\n  picard %s\n", processGuid)
 	fmt.Printf("To see what's running:\n  troy %s\n", domain)
-	fmt.Printf("To delete the LRP:\n  worf delete-lrp %s\n", processGuid)
+	fmt.Printf("To delete the LRP:\n  worf destroy-lrp %s\n", processGuid)
 
 	return nil
 }

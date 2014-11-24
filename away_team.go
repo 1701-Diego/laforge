@@ -20,22 +20,22 @@ func AwayTeam(client receptor.Client, domain string, routeRoot string) error {
 			Actions: []models.Action{
 				&models.DownloadAction{
 					From:     "http://onsi-public.s3.amazonaws.com/riker.tar.gz",
-					To:       "/",
+					To:       "/tmp",
 					CacheKey: "riker",
 				},
 				&models.DownloadAction{
 					From:     "http://onsi-public.s3.amazonaws.com/crusher.tar.gz",
-					To:       "/",
+					To:       "/tmp",
 					CacheKey: "crusher",
 				},
 			},
 		},
 		Action: &models.RunAction{
-			Path:      "/riker",
+			Path:      "/tmp/riker",
 			LogSource: "RIKER",
 		},
 		Monitor: &models.RunAction{
-			Path:      "/crusher",
+			Path:      "/tmp/crusher",
 			Args:      []string{"--port-check=8080"},
 			LogSource: "CRUSHER",
 		},
@@ -54,7 +54,7 @@ func AwayTeam(client receptor.Client, domain string, routeRoot string) error {
 	fmt.Printf("To make contact:\n  http://%s/\n", route)
 	fmt.Printf("To stream logs:\n  picard %s\n", processGuid)
 	fmt.Printf("To see what's running:\n  troy %s\n", domain)
-	fmt.Printf("To delete the LRP:\n  worf delete-lrp %s\n", processGuid)
+	fmt.Printf("To delete the LRP:\n  worf destroy-lrp %s\n", processGuid)
 
 	return nil
 }

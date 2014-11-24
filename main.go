@@ -17,7 +17,7 @@ type Experiment struct {
 var experiments = []Experiment{
 	{
 		Name:        "away-team",
-		Description: "Deploy riker as an LRP (no Docker, not for Diego-Edge)",
+		Description: "Deploy riker as an LRP (no Docker, Ketchup only: not for Diego-Edge)",
 		Experiment:  AwayTeam,
 	},
 	{

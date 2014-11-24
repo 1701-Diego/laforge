@@ -31,7 +31,7 @@ func ModulateFrequencies(client receptor.Client, domain string, _ string) error 
 	fmt.Println("Modulating Frequencies")
 	fmt.Printf("To stream logs:\n  picard %s\n", taskGuid)
 	fmt.Printf("To view current status:\n  troy %s\n", domain)
-	fmt.Printf("To delete the task:\n  worf delete-task %s\n", taskGuid)
+	fmt.Printf("To delete the task:\n  worf destroy-task %s\n", taskGuid)
 
 	return nil
 }
